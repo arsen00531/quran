@@ -3,7 +3,6 @@ import { QuranModule } from './quran/quran.module';
 import { TelegrafModule } from 'nestjs-telegraf';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { OpenAiModule } from './open-ai/open-ai.module';
-import { YouComModule } from './you-com/you-com.module';
 import * as LocalSession from 'telegraf-session-local';
 
 const sessions = new LocalSession({ database: 'sessions_db.json' });
@@ -23,7 +22,6 @@ const sessions = new LocalSession({ database: 'sessions_db.json' });
     }),
     QuranModule,
     OpenAiModule,
-    YouComModule
   ],
   controllers: [],
   providers: [],
