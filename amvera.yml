@@ -16,3 +16,7 @@ services:
       command: npm run start
       args: --port 8080
       containerPort: 8080
+  meta:
+    environment: docker
+    toolchain:
+      name: docker
