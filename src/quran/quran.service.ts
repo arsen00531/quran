@@ -4,7 +4,6 @@ import { writeFile } from 'fs/promises';
 import { OpenAiService } from 'src/open-ai/open-ai.service';
 import { Context } from 'telegraf';
 import { Message, Update } from 'telegraf/typings/core/types/typegram';
-import { AssemblyAI } from 'assemblyai';
 import { ConfigService } from '@nestjs/config';
 import { randomUUID } from 'crypto';
 import { join } from 'path';
@@ -12,15 +11,9 @@ import { join } from 'path';
 
 @Injectable()
 export class QuranService {
-    private assemblyAI: AssemblyAI
     constructor(
         private readonly openAiService: OpenAiService,
-        private readonly configService: ConfigService
-    ) {
-        this.assemblyAI = new AssemblyAI({
-            apiKey: this.configService.get('ASSEMBLY_API_KEY'),
-        });
-    }
+    ) {}
 
     async startCommand(ctx: Context) {
         await ctx.reply('ا‎لسلام عليكم ورحمة الله وبركاته');
