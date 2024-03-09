@@ -12,3 +12,7 @@ services:
     ports:
       - 5000:5000
       - 9229:9229
+    run:
+      command: npm run start
+      args: --port 8080
+      containerPort: 8080
